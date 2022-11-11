@@ -1,0 +1,12 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #d60505;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, rgba(214,5,5,0.9), rgba(118,75,162,0.9));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, rgba(214,5,5,0.9), rgba(118,75,162,0.9))
+  }
+
+@import "../node_modules/bootstrap/scss/bootstrap";
