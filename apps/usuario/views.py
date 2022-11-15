@@ -2,22 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
-from django.views.generic import TemplateView
-
 
 def login_user (request):
     if request.method == "POST":
-        username = request.POST['email']
+        email = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request,email=username,password=password)
+        user = authenticate(request,email=email,password=password)
         if user is not None:
             login(request,user)
             return redirect('home')
         else:
-            messages.success(request,('Hubo un error al intentar iniciar, intentalo nuevamente...'))
-            return redirect(login)
+            messages.success(request,('Hubo un error al intentar iniciar sesión, intentalo nuevamente...'))
+            return redirect('auth')
     else:
-        return render(request, 'index.html',{})
-    
-class Index(TemplateView):
-    template_name = "index.html"
+        return render(request,'authentication/login.html',{})

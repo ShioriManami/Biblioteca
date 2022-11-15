@@ -52,8 +52,8 @@ class Usuario(AbstractBaseUser):
     email= models.EmailField("Correo electronico", max_length=254, unique = True)
     objects = UsuarioManager()
     
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email', 'nombres', 'apellidoP', 'apellidoM']
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['nombres', 'apellidoP', 'apellidoM']
     
     def __str__(self):
         return f'{self.username},{self.apellidoP}'
