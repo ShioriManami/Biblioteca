@@ -1,3 +1,42 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+
+$all-colors: map-merge-multiple(
+  $blues,
+  $indigos,
+  $purples,
+  $pinks,
+  $reds,
+  $oranges,
+  $yellows,
+  $greens,
+  $teals,
+  $cyans,
+  
+);
+
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values:
+        map-merge(
+          $theme-colors,
+          (
+            $all-colors
+          )
+        ),
+    ),
+  )
+);
+
 .gradient-custom {
     /* fallback for old browsers */
     background: #d60505;
@@ -8,5 +47,6 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to left, rgba(214,5,5,0.9), rgba(118,75,162,0.9))
   }
-
+@import "../node_modules/bootstrap/scss/utilities/api";
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
